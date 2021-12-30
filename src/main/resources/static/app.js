@@ -3,6 +3,7 @@ let dps = []; // dataPoints
 let dataLength = 20; // number of dataPoints visible at any point
 let xVal = 1;
 let chart;
+let intervalId;
 
 window.onload = function () {
 
@@ -87,6 +88,7 @@ function disconnect() {
         stompClient.disconnect();
     }
     setConnected(false);
+    clearInterval(intervalId);
     console.log("Disconnected");
 }
 

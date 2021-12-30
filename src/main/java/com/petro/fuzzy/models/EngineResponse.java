@@ -1,5 +1,5 @@
 package com.petro.fuzzy.models;
 
-public record EngineResponse(int engineSpeed, int vacuumPressure, int fpw) {
+public record EngineResponse(double engineSpeed, double vacuumPressure, double fpw) {
 
 }
