@@ -7,6 +7,7 @@
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/sockjs-client/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="/app.js"></script>
 </head>
 <body>
@@ -34,7 +35,6 @@
                     <textarea class="form-control" cols="70" id="simRes" placeholder="Simulation results here..."
                               rows="10" readonly></textarea>
                 </div>
-                <button class="btn btn-default" disabled="disabled" id="send" type="submit">Send</button>
             </form>
         </div>
         <div id="rouletteForm" class="col-md-4">
@@ -50,17 +50,7 @@
     </div>
     <div class="row">
         <button class="btn btn-default" id="clearEvents" type="submit">Clear events</button>
-<!--        <div class="col-md-12">-->
-<!--            <table class="table table-striped" id="conversation">-->
-<!--                <thead>-->
-<!--                <tr>-->
-<!--                    <th>Simulation info</th>-->
-<!--                </tr>-->
-<!--                </thead>-->
-<!--                <tbody id="simRes">-->
-<!--                </tbody>-->
-<!--            </table>-->
-<!--        </div>-->
+        <div id="chartContainer"></div>
     </div>
 </div>
 </body>

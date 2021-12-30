@@ -1,9 +1,40 @@
 let stompClient = null;
+let dps = []; // dataPoints
+let dataLength = 20; // number of dataPoints visible at any point
+let xVal = 1;
+let chart;
+
+window.onload = function () {
+
+    chart = new CanvasJS.Chart("chartContainer", {
+        title: {
+            text: "Width of the pulse applied to the fuel injector(FPW), ms"
+        },
+        data: [{
+            type: "line",
+            dataPoints: dps
+        }]
+    });
+}
+
+function updateChart(yVal) {
+
+    dps.push({
+        x: xVal,
+        y: yVal
+    });
+    xVal++;
+
+    if (dps.length > dataLength) {
+        dps.shift();
+    }
+
+    chart.render();
+}
 
 function setConnected(connected) {
     $("#connect").prop("disabled", connected);
     $("#disconnect").prop("disabled", !connected);
-    $("#send").prop("disabled", !connected);
 
     if (connected) {
         $("#conversation").show();
@@ -48,6 +79,7 @@ function showResult(message) {
     $("#simRes").val("Engine speed: " + parsedMessage.engineSpeed + " RPM. Vacuum pressure: "
         + parsedMessage.vacuumPressure + " kPa. Width of the pulse applied to the fuel injector(FPW): "
         + parsedMessage.fpw + " ms.\n\n" + value);
+    updateChart(parsedMessage.fpw);
 }
 
 function disconnect() {
