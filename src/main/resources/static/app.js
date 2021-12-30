@@ -57,7 +57,7 @@ function connect() {
         stompClient.subscribe('/topic/fpw', function (greeting) {
             showResult(greeting.body);
         });
-        setInterval(sendSignal, 1500);
+        intervalId = setInterval(sendSignal, 1500);
     }, (e) => {
         let body = e.body
         if (body) {
