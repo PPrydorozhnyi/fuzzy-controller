@@ -11,6 +11,19 @@ window.onload = function () {
         title: {
             text: "Width of the pulse applied to the fuel injector(FPW), ms"
         },
+        axisY: {
+            suffix: " ms",
+            crosshair: {
+                enabled: true,
+                snapToDataPoint: true
+            }
+        },
+        axisX: {
+            crosshair: {
+                enabled: true,
+                snapToDataPoint: true
+            }
+        },
         data: [{
             type: "line",
             dataPoints: dps
@@ -18,11 +31,12 @@ window.onload = function () {
     });
 }
 
-function updateChart(yVal) {
+function updateChart(yVal, s, p) {
 
     dps.push({
         x: xVal,
-        y: yVal
+        y: yVal,
+        label: "s : " + s + ", p: " + p
     });
     xVal++;
 
@@ -80,7 +94,7 @@ function showResult(message) {
     $("#simRes").val("Engine speed: " + parsedMessage.engineSpeed + " RPM. Vacuum pressure: "
         + parsedMessage.vacuumPressure + " kPa. Width of the pulse applied to the fuel injector(FPW): "
         + parsedMessage.fpw + " ms.\n\n" + value);
-    updateChart(parsedMessage.fpw);
+    updateChart(parsedMessage.fpw, parsedMessage.engineSpeed, parsedMessage.vacuumPressure);
 }
 
 function disconnect() {

@@ -40,7 +40,7 @@ public class EngineControlService {
     final var large = term("large", 143.2, 143.5, 143.7, 144.1);
     final var vLarge = term("vLarge", 143.9, 144.2, 145, 146);
 
-    fpw = output("fpw", vsmall, small, large, vLarge).start(0).end(145);
+    fpw = output("fpw", vsmall, small, large, vLarge).start(133).end(145);
 
     impl = ControllerBuilder.newBuilder()
         .when().var(speed).is(sLow).and().var(vacuumPressure).is(vVHigh).then().var(fpw).is(vsmall)
