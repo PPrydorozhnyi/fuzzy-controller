@@ -36,7 +36,7 @@ public class EngineControlService {
         .start(0).end(40);
 
     final var vsmall  = term("vsmall", -1, 0, 135, 142);
-    final var small = term("small", 137, 142, 142.8, 143.5);
+    final var small = term("small", 141, 142, 142.8, 143.5);
     final var large = term("large", 143.2, 143.5, 143.7, 144.1);
     final var vLarge = term("vLarge", 143.9, 144.2, 145, 146);
 
