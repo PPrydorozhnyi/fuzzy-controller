@@ -21,7 +21,7 @@ public class EngineControlService {
   private final Variable fpw;
 
   public EngineControlService() {
-    final var sLow = term("low", -1, 0, 1500, 200);
+    final var sLow = term("low", -1, 0, 1500, 2000);
     final var sMed   = term("med", 1600, 2000, 2500, 2700);
     final var sHigh  = term("high", 2500, 2800, 3000, 3100);
 
