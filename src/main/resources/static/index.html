@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fuzzy Engine Control Simulation</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div class="container" id="main-content">
+    <div class="row">
+        <div class="col-md-10">
+            <form class="form-inline">
+                <div class="input-group">
+                    <br>
+                    <button class="btn btn-default" id="connect" type="submit">Start simulation</button>
+                    <button class="btn btn-default" disabled="disabled" id="disconnect" type="submit">End simulation
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="simRes">Results</label>
+                    <textarea class="form-control" cols="70" id="simRes" placeholder="Simulation results here..."
+                              rows="10" readonly></textarea>
+                </div>
+                <button class="btn btn-default" disabled="disabled" id="send" type="submit">Send</button>
+            </form>
+        </div>
+        <div id="rouletteForm" class="col-md-4">
+            <form>
+                <div class="form-group">
+                    <label class="form-label" for="engineSpeed">Engine Speed, RPM</label>
+                    <input id="engineSpeed" type="number" value="500" max="3000" min="0">
+                    <label class="form-label" for="vacuumPressure">Vacuum Pressure, kPa</label>
+                    <input id="vacuumPressure" type="number" value="15" max="40" min="0">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-default" id="clearEvents" type="submit">Clear events</button>
+<!--        <div class="col-md-12">-->
+<!--            <table class="table table-striped" id="conversation">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th>Simulation info</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody id="simRes">-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+    </div>
+</div>
+</body>
+</html>
