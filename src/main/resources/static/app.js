@@ -136,7 +136,7 @@ function sendSignal() {
         engineSpeed = 3000;
     }
 
-    let vacuumPressure =  $("#vacuumPressure").val();
+    let vacuumPressure = $("#vacuumPressure").val();
 
     if (vacuumPressure < 0) {
         vacuumPressure = 0;
@@ -146,7 +146,8 @@ function sendSignal() {
 
     let request = {
         engineSpeed: engineSpeed,
-        vacuumPressure: vacuumPressure
+        vacuumPressure: vacuumPressure,
+        defuzzifyMethod: $("#defuzzifyMethod").val()
     }
 
     stompClient.send('/signal', {}, JSON.stringify(request));

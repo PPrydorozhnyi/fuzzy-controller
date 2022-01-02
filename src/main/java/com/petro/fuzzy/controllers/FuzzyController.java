@@ -1,7 +1,7 @@
 package com.petro.fuzzy.controllers;
 
-import com.petro.fuzzy.models.EngineRequest;
-import com.petro.fuzzy.models.EngineResponse;
+import com.petro.fuzzy.models.dto.EngineRequest;
+import com.petro.fuzzy.models.dto.EngineResponse;
 import com.petro.fuzzy.services.EngineControlService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

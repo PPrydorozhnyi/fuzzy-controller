@@ -44,6 +44,14 @@
                     <input id="engineSpeed" type="number" value="500" max="3000" min="0" step="100">
                     <label class="form-label" for="vacuumPressure">Vacuum Pressure, kPa</label>
                     <input id="vacuumPressure" type="number" value="15" max="40" min="0">
+                    <label class="form-label" for="defuzzifyMethod">Defuzzify method</label>
+                    <select class="form-select" id="defuzzifyMethod">
+                        <option selected value="CENTROID">CENTROID</option>
+                        <option value="BISECTOR">BISECTOR</option>
+                        <option value="MOM">Middle of Maximum</option>
+                        <option value="SOM">Smallest of Maximum</option>
+                        <option value="LOM">Largest of Maximum</option>
+                    </select>
                 </div>
             </form>
         </div>
